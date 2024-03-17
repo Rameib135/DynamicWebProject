@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/profile.css">
+    <title>Profile: <%= id %></title>
+</head>
+<body>
+  <div class="content-layer">
+  <h1>Profile: <%= id %></h1>
+  <div class="banner" style="background: url('/profile/<%= id %>/banner.png') center/cover no-repeat;"></div>
+    <div class="banner">
+        <div>
+            <img id="profileImg" src="/profile/<%= id %>/profile.png" alt="Profile Image">
+        </div>
+    </div>
+
+
+
+<!-- Profile Section -->
+<div class="info-section">
+  <div class="info-content left-div">
+    <div class="section">
+      <h2><%= title %></h2>
+      <p><%= bio %></p>
+  
+  <div class="image-block right-div">
+      <img src="/profile/<%= id %>/image1.png" alt="Profile Image">
+  </div>
+</div>
+</div>
+  
+
+
+
+  
+  
+ <!-- Endorsement Section -->
+ <div class=" endorsement-section ">
+  <div class=" display-flex margin-around ">
+           <!-- Left Side (Profile 2 Image) -->
+      <div class="center-in-div left-div ">
+          <img src="/profile/<%= id %>/image2.png" alt="Profile 2 Image" />
+      </div>
+       <!-- Right Side (Endorsements) -->
+      <div class=" right-div">
+      <div class="quote">
+          <h2>ENDORSEMENTS</h2>
+      </div>
+
+      <div class="quote">
+        <div class="white-box">
+          <p>
+        <% texts.forEach(function(text) { %>
+            <p><%= text %></p>
+        <% }); %> </p>
+        </div>
+      </div>
+      </div>
+  </div>
+ </div>
+  </div>
+  
+    
+
+
+</body>
+</html>
