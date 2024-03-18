@@ -4,32 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/profile.css">
+
     <title>Profile: <%= id %></title>
 </head>
 <body>
   <div class="content-layer">
-  <h1>Profile: <%= id %></h1>
-  <div class="banner" style="background: url('/profile/<%= id %>/banner.png') center/cover no-repeat;"></div>
+  <div class="banner" style="background: url('/profile/<%= id %>/banner.png') center/cover no-repeat;">
     <div class="banner">
         <div>
             <img id="profileImg" src="/profile/<%= id %>/profile.png" alt="Profile Image">
         </div>
     </div>
+  </div>
 
 
 
 <!-- Profile Section -->
 <div class="info-section">
+  <div class="info-title">
+  <div class="container">
   <div class="info-content left-div">
     <div class="section">
-      <h2><%= title %></h2>
-      <p><%= bio %></p>
+      <br>
+      <p><br><%= title %></br></p>
+    </br>
+    
+    
+      <%= bio %> 
+    </div>
+    
   
-  <div class="image-block right-div">
+  <div class=" right-div">
       <img src="/profile/<%= id %>/image1.png" alt="Profile Image">
   </div>
 </div>
 </div>
+  </div>
+</div>
+  
+  
   
 
  <!-- Endorsement Section -->
@@ -46,10 +59,11 @@
       </div>
 
       <div class="quote">
-        <div class="white-box">
+        
           <p>
+            
         <% texts.forEach(function(text) { %>
-            <p><%= text %></p>
+          <div class="white-box"> <div class="quote"> <p><br><%= text %></br></p> </div> </div>
         <% }); %> </p>
         </div>
       </div>
@@ -60,6 +74,10 @@
   
     
 
+</div>
+<!-- Footer -->
+<footer>Zefat Academic College</footer>
+</div>
 
 </body>
 </html>

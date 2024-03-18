@@ -33,9 +33,15 @@ app.get('/profile', function(req, res) {
         // Reading profile information from files
         let bio = fs.readFileSync(path.join(privatePath, 'bio.txt'), 'utf8');
         let title = fs.readFileSync(path.join(privatePath, 'title.txt'), 'utf8');
+
+        
         let texts = [];
 
         let files = fs.readdirSync(privatePath);
+
+
+
+
 
         for (let file of files) {
             if (file.startsWith('text')) {
@@ -58,6 +64,6 @@ app.get('/profile', function(req, res) {
 });
 
 // Listening on port 3000
-app.listen(4000, function() {
-    console.log('Server is running on port 4000');
+app.listen(400, function() {
+    console.log('Server is running on port 4003');
 });
