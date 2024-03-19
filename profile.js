@@ -34,6 +34,17 @@ app.get('/profile', function(req, res) {
         let bio = fs.readFileSync(path.join(privatePath, 'bio.txt'), 'utf8');
         let title = fs.readFileSync(path.join(privatePath, 'title.txt'), 'utf8');
 
+
+            // Extracting each line of bio and title
+            let bioLines = bio.split('\n');
+            let titleLines = title.split('\n');
+
+
+ 
+
+
+
+        
         
         let texts = [];
 
@@ -51,7 +62,7 @@ app.get('/profile', function(req, res) {
         }
         
                 // Sending the HTML response with the profile information
-                res.render('profile', { id: id, bio: bio, title: title, texts: texts });
+                res.render('profile', { id: id, bioLines: bioLines, titleLines: titleLines, texts: texts });
 
 
                   
@@ -64,6 +75,6 @@ app.get('/profile', function(req, res) {
 });
 
 // Listening on port 3000
-app.listen(400, function() {
-    console.log('Server is running on port 4003');
+app.listen(4004, function() {
+    console.log('Server is running on port 4004');
 });

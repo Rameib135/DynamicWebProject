@@ -19,28 +19,42 @@
 
 
 
-<!-- Profile Section -->
-<div class="info-section">
-  <div class="info-title">
+  <div class="info-section">
   <div class="container">
-  <div class="info-content left-div">
-    <div class="section">
-      <br>
-      <p><br><%= title %></br></p>
-    </br>
-    
-    
-      <%= bio %> 
+    <div class="info-content left-div">
+        <div class="section">
+          
+          <% let title = titleLines[0].split('.'); %>
+          <div class="info-title">
+          <br><h1 style="text-align: right;"><%= title[0] %></h1></br>
+          </div>
+          <% for(let i = 1; i < titleLines.length; i++) { %>
+           <br> <p> <%= titleLines[i] %> </p> </br> 
+          <% } %>
+        
+          
+                    
+                        <% for (let i = 0; i < bioLines.length; i++) { %>
+                          <br>
+                            <div class="row">
+                                <div class="col"><strong style="font-size: larger;"><%= bioLines[i].split(':')[0].trim() %></strong></div>
+                                <div class="col"><%= bioLines[i].split(':')[1].trim() %></div>
+                            </div>
+                          </br>
+                        <% } %>
+                    
+                
+              </div>
+        </div>
+            
+              <div>
+                    <img src="/profile/<%= id %>/image1.png" alt="Profile Image" />
+                </div>
+        </div>
     </div>
-    
+
   
-  <div class=" right-div">
-      <img src="/profile/<%= id %>/image1.png" alt="Profile Image">
-  </div>
-</div>
-</div>
-  </div>
-</div>
+  
   
   
   
