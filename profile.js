@@ -19,6 +19,8 @@ app.use(express.static('public'));
 // Setting up the public directory to serve static files
 app.use('/profile', express.static(path.join(__dirname, 'public')));
 
+
+
 // Handling requests to the /profile route
 app.get('/profile', function(req, res) {
     // Extracting the id parameter from the query string
@@ -29,6 +31,7 @@ app.get('/profile', function(req, res) {
         // Constructing the paths for public and private directories
         let publicPath = path.join(__dirname, 'public', id);
         let privatePath = path.join(__dirname, 'private', id);
+   
 
         // Reading profile information from files
         let bio = fs.readFileSync(path.join(privatePath, 'bio.txt'), 'utf8');
@@ -39,18 +42,10 @@ app.get('/profile', function(req, res) {
             let bioLines = bio.split('\n');
             let titleLines = title.split('\n');
 
-
- 
-
-
-
-        
         
         let texts = [];
 
         let files = fs.readdirSync(privatePath);
-
-
 
 
 
@@ -74,7 +69,7 @@ app.get('/profile', function(req, res) {
     }
 });
 
-// Listening on port 3000
-app.listen(4004, function() {
-    console.log('Server is running on port 4004');
+// Listening on port 4006
+app.listen(4006, function() {
+    console.log('Server is running on port 4006');
 });

@@ -1,3 +1,7 @@
+/*Student names: RAME IBRAHEM, ALI KHATIB, RAHAF ABABSI
+  Date: 29/02/2024
+  Description: NodeJS code for generating a profile website.*/
+
 /* Reset some default styles */
 body,
 h1,
@@ -264,6 +268,11 @@ footer {
     width:50%;
     float:left;
     text-align:left;
+}
+
+
+.line-spacing {
+    margin-bottom: 20px; /* Adjust this value as needed */
 }
 
 

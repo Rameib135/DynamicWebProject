@@ -18,21 +18,22 @@
   </div>
 
 
-
+<!-- Info Section -->
   <div class="info-section">
-  <div class="container">
-    <div class="info-content left-div">
-        <div class="section">
-          
           <% let title = titleLines[0].split('.'); %>
           <div class="info-title">
-          <br><h1 style="text-align: right;"><%= title[0] %></h1></br>
+          <br><h1 style="text-align: center;"><%= title[0] %></h1></br>
           </div>
+
+          <div class="container">
+            <div class="info-content left-div">
+              <div class="section">
+                
           <% for(let i = 1; i < titleLines.length; i++) { %>
-           <br> <p> <%= titleLines[i] %> </p> </br> 
-          <% } %>
-        
-          
+            <div class="line-spacing">
+            <p> <%- titleLines[i] %> </p> 
+            </div>
+          <% } %> 
                     
                         <% for (let i = 0; i < bioLines.length; i++) { %>
                           <br>
@@ -42,23 +43,26 @@
                             </div>
                           </br>
                         <% } %>
-                    
-                
-              </div>
+          
+          </div>
         </div>
-            
-              <div>
+
+
+              <div class="image-block">
                     <img src="/profile/<%= id %>/image1.png" alt="Profile Image" />
-                </div>
-        </div>
-    </div>
+              </div>
+        
+          </div>
+  </div>
+        
+  
+
+  
 
   
   
   
   
-  
-
  <!-- Endorsement Section -->
  <div class=" endorsement-section ">
   <div class=" display-flex margin-around ">
@@ -83,12 +87,43 @@
       </div>
       </div>
   </div>
- </div>
-  </div>
+ 
   
-    
 
+
+
+<!-- Squad Debugging Whole the Meet -->
+<div class="friends-section">
+  <div>
+    <h2>Squad Debugging Whole the Meet</h2>
+  </div>
+
+  <div class="friends-block">
+        <a href="/profile/?id=jessy">
+        <img src='/profile/jessy/profile.png' alt="Profile Image" >
+        </a>
+
+        <a href="/profile/?id=livlig">
+        <img src="/profile/livlig/profile.png" alt="Profile Image" >
+        </a>
+     
+        <a href="/profile/?id=mickey">
+        <img src='/profile/mickey/profile.png' alt="Profile Image" >
+        </a>
+
+        <a href="/profile/?id=myprofile">
+        <img src="/profile/myprofile/profile.png" alt="Profile Image" >
+        </a>
+
+        <a href="/profile/?id=teddy">
+        <img src='/profile/teddy/profile.png' alt="Profile Image" >
+        </a>
+ </div>
 </div>
+
+
+
+
 <!-- Footer -->
 <footer>Zefat Academic College</footer>
 </div>
