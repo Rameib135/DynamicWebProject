@@ -44,6 +44,7 @@ app.get('/profile', function(req, res) {
 
         
         let texts = [];
+        let authors = [];
 
         let files = fs.readdirSync(privatePath);
 
@@ -52,12 +53,22 @@ app.get('/profile', function(req, res) {
         for (let file of files) {
             if (file.startsWith('text')) {
                 let textContent = fs.readFileSync(path.join(privatePath, file), 'utf8');
-                texts.push(textContent);
+                
+
+                // Extracting only the first line from the text content
+                let lines = textContent.split('\n');
+                let firstLine = lines[0];
+                texts.push(firstLine);
+        
+                // Extracting author name from the last line of text content
+                //let lines = textContent.split('\n');
+                let author = lines[lines.length - 1];
+                authors.push(author);
             }
         }
         
                 // Sending the HTML response with the profile information
-                res.render('profile', { id: id, bioLines: bioLines, titleLines: titleLines, texts: texts });
+                res.render('profile', { id: id, bioLines: bioLines, titleLines: titleLines, texts: texts, authors: authors});
 
 
                   
@@ -70,6 +81,6 @@ app.get('/profile', function(req, res) {
 });
 
 // Listening on port 4006
-app.listen(4006, function() {
-    console.log('Server is running on port 4006');
+app.listen(4009, function() {
+    console.log('Server is running on port 4009');
 });

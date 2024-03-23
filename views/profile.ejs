@@ -29,20 +29,35 @@
             <div class="info-content left-div">
               <div class="section">
                 
+          
           <% for(let i = 1; i < titleLines.length; i++) { %>
             <div class="line-spacing">
             <p> <%- titleLines[i] %> </p> 
             </div>
           <% } %> 
                     
-                        <% for (let i = 0; i < bioLines.length; i++) { %>
-                          <br>
-                            <div class="row">
-                                <div class="col"><strong style="font-size: larger;"><%= bioLines[i].split(':')[0].trim() %></strong></div>
-                                <div class="col"><%= bioLines[i].split(':')[1].trim() %></div>
-                            </div>
-                          </br>
-                        <% } %>
+          <% for (let i = 0; i < bioLines.length; i++) { %>
+            <br>
+            <div class="row">
+                <% let colonIndex = bioLines[i].indexOf(':'); %>
+                <div class="col">
+                    <strong style="font-size: larger;"><%- bioLines[i].substring(0, colonIndex).trim() %></strong>
+                </div>
+                <div class="col">
+                    <% if (i === bioLines.length - 1) { %>
+                        <ul>
+                            <% let siblings = bioLines[i].substring(colonIndex + 1).split(','); %>
+                            <% siblings.forEach(function(sibling) { %>
+                                <li><%- sibling.trim() %></li>
+                            <% }); %>
+                        </ul>
+                    <% } else { %>
+                        <%- bioLines[i].substring(colonIndex + 1).trim() %>
+                    <% } %>
+                </div>
+            </div>
+            <br>
+        <% } %>
           
           </div>
         </div>
@@ -75,18 +90,18 @@
       <div class="quote">
           <h2>ENDORSEMENTS</h2>
       </div>
-
-      <div class="quote">
-        
-          <p>
-            
-        <% texts.forEach(function(text) { %>
-          <div class="white-box"> <div class="quote"> <p><br><%= text %></br></p> </div> </div>
-        <% }); %> </p>
+      <% for (let i = 0; i < texts.length; i++) { %>
+        <div class="quote">
+            <div class="white-box">
+                <p><%= texts[i] %></p>
+                <hr />
+                <span><%= authors[i] %></span>
+            </div>
         </div>
-      </div>
-      </div>
-  </div>
+        <% } %>
+    </div>
+</div>
+</div>
  
   
 
