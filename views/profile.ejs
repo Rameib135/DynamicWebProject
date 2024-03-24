@@ -29,12 +29,14 @@
             <div class="info-content left-div">
               <div class="section">
                 
-          
-          <% for(let i = 1; i < titleLines.length; i++) { %>
-            <div class="line-spacing">
-            <p> <%- titleLines[i] %> </p> 
-            </div>
-          <% } %> 
+                <% if (titleLines.length > 1) { %>
+                  <% let contentParagraphs = titleLines[1].split('. '); %>
+                  <p class="line-spacing"><%- contentParagraphs[0] + '.' %></p>
+                  <% if (contentParagraphs.length > 1) { %>
+                    <p class="line-spacing"><%- contentParagraphs.slice(1).join('. ') %></p>
+                  <% } %>
+                <% } %>
+
                     
           <% for (let i = 0; i < bioLines.length; i++) { %>
             <br>
